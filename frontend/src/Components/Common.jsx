@@ -33,7 +33,7 @@ const Common = ({
                             </div>
 
                             <div className="col-lg-6 order-1 order-lg-2 header-image">
-                                <img src={imgsrc} className="img-fluid animated" alt="Home Img"/>
+                                <img src={imgsrc} className="img-fluid animated mt-5" alt="Home Img"/>
                             </div>
                         </div>
                     </div>

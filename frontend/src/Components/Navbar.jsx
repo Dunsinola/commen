@@ -72,14 +72,14 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
+// import { ImBlog } from "react-icons/im";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
 
-import { MdDeveloperMode } from "react-icons/md";
+// import { MdDeveloperMode } from "react-icons/md";
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -103,7 +103,7 @@ function NavBar() {
       fixed="top"
       expand="md"
       className={navColour ? "sticky" : "navbar"}
-      classname='bg-dark'
+      
     >
       <Container>
         <Navbar.Brand href="#" target="_blank">
@@ -116,9 +116,7 @@ function NavBar() {
             updateExpanded(expand ? false : "expanded");
           }}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+        
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto" defaultActiveKey="#home">

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import swal from 'sweetalert';
+import Axios from'axios'
+import "../App.css"
+
+
 
 
 const Contact = () => {
-
+    const url='http://localhost:5000/'
     const [data, setData] = useState({
         fullname: "",
         email: "",
@@ -17,19 +21,27 @@ const Contact = () => {
                 ...preVal,
                 [name] : value,
             }
+
+          
         });
     }
 
     const formSubmitHandle = (e) => {
         e.preventDefault();
         // message can be saved to db or email can be sent from here!
+        Axios.post(url,{
+          text:data.fullname
+        }).then(res=>{
+          console.log(res.data)
+        })
         
-        swal("Sent!", "Message Sent Successfully!", "success");
+        swal("Sent!", "Message Sent Successfully!", "success")
+        
     }
 
   return (
     <>
-      <div className="my-5">
+      <div className=" contact " >
         <h1 className="text-center">Contact Us</h1>
       </div>
       <div className="container contact_div">

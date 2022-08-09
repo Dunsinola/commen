@@ -3,6 +3,12 @@ import swal from 'sweetalert';
 import Axios from'axios'
 import "../App.css"
 
+import {
+  AiFillInstagram,
+} from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedinIn } from "react-icons/fa";
+
 
 
 
@@ -28,10 +34,12 @@ const Contact = () => {
 
     const formSubmitHandle = (e) => {
         e.preventDefault();
+        
         // message can be saved to db or email can be sent from here!
         Axios.post(url,{
           text:data.fullname
         }).then(res=>{
+          console.log(data.fullname)
           console.log(res.data)
         })
         
@@ -93,6 +101,41 @@ const Contact = () => {
                 </div>
               </div>
             </form>
+            <div className='container-fluid text-center mt-5'>
+            <ul className="container-fluid d-flex ">
+      
+      <li className="nav-link">
+        <a
+          href="https://www.linkedin.com/in/dunsin-olaleye-a4a9311b7/"
+          target="_blank"
+          rel="noreferrer"
+          className="icon-colour  home-social-icons"
+        >
+          <FaLinkedinIn className="social-icon" />
+        </a>
+      </li>
+      <li className="nav-link">
+        <a
+          href="https://www.instagram.com/dunsinola/"
+          target="_blank"
+          rel="noreferrer"
+          className="icon-colour home-social-icons"
+        >
+          <AiFillInstagram className="social-icon" />
+        </a>
+      </li>
+      <li className="nav-link">
+        <a
+          href="mailto:dunsinolaleye@yahoo.com"
+          target="_blank"
+          rel="noreferrer"
+          className="icon-colour home-social-icons"
+        >
+          <MdEmail className="social-icon" />
+        </a>
+      </li>
+    </ul>
+            </div>
           </div>
         </div>
       </div>

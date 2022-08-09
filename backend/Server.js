@@ -5,7 +5,10 @@ const app = express();
 const port =process.env.PORT || 5000
 const Form =  require ('./models/formModels')
 const connectDB = require('./config/db');
+const cors = require('cors');
 
+
+app.use(cors())
 
 connectDB ()
 
@@ -26,7 +29,11 @@ const setForm = asyncHandler(async (req, res) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 app.post('/', setForm)
 app.listen(port,() => console.log("started a server"))

@@ -7,6 +7,14 @@ text: {
       type: String,
       required: [true, 'Please add a text value'],
     },
+    email: {
+      type: String,
+      required: [true, 'Please add a text value'],
+    },
+    message: {
+      type: String,
+      required: [true, 'Please add a text value'],
+    },
   },
   {
     timestamps: true,

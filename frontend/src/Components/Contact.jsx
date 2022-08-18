@@ -37,13 +37,17 @@ const Contact = () => {
         
         // message can be saved to db or email can be sent from here!
         Axios.post(url,{
-          text:data.fullname
+          text:data.fullname,
+          email:data.email,
+          message:data.msg
         }).then(res=>{
           console.log(data.fullname)
           console.log(res.data)
+          
         })
         
-        swal("Sent!", "Message Sent Successfully!", "success")
+        swal("Sent!", "Message Sent Successfully!", "well get back to you")
+      
         
     }
 
@@ -84,7 +88,7 @@ const Contact = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label">
-                  Example textarea
+                  message
                 </label>
                 <textarea
                   className="form-control"
@@ -96,7 +100,7 @@ const Contact = () => {
                 ></textarea>
                 <div className="col-12">
                   <button className="btn btn-outline-primary mt-3" type="submit">
-                    Submit form
+                     send
                   </button>
                 </div>
               </div>

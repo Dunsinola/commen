@@ -6,11 +6,18 @@ const port =process.env.PORT || 5000
 const Form =  require ('./models/formModels')
 const connectDB = require('./config/db');
 const cors = require('cors');
-
-
-app.use(cors())
-
+const path = require('path')
 connectDB ()
+
+
+app.use(cors({origin:'*'}))
+
+const getForm= asyncHandler(async (req, res) => {
+  const forms = await Form.find();
+
+  res.status(200).json(forms); 
+})
+
 
 const setForm = asyncHandler(async (req, res) => {
     if (!req.body.text) {
@@ -20,20 +27,23 @@ const setForm = asyncHandler(async (req, res) => {
   
     const form = await Form.create({
       text: req.body.text,
+      email: req.body.email,
+      message: req.body.message,
     
     })
   
     res.status(200).json(form)
   })
-
+  
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
-
 app.post('/', setForm)
+app.get('/user', getForm)
+
+app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+app.get('*', (req, res)  =>
+	res.sendFile(path.resolve(__dirname, '../', 'frontend' ,'build' , 'index.html')))
+
 app.listen(port,() => console.log("started a server"))

@@ -23,7 +23,7 @@ const Common = ({
                                     
                                 </h1>
                                 <h2 className="my-3">
-                                    We are the team of talented developer making websites
+                                We help your business grow by bringing you close to your customers with a beatuful, functional and responsive user interface
                                 </h2>
                                 <div className="mt-3">
                                     <NavLink to={visit} className="btn-get-started ">
@@ -31,9 +31,9 @@ const Common = ({
                                     </NavLink>
                                 </div>
                             </div>
-
+                            <div className="container-fluid mt-5"></div>
                             <div className="mt-5 col-lg-6 order-1 order-lg-2 header-image">
-                                <img src={imgsrc} className="img-fluid animated mt-5" alt="Home Img"/>
+                                <img src={imgsrc} className="img-fluid animated " alt="Home Img"/>
                             </div>
                         </div>
                     </div>

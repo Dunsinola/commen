@@ -100,15 +100,14 @@ function NavBar() {
   return (
     <Navbar
       expanded={expand}
-      fixed="top"
       expand="md"
       className={navColour ? "sticky" : "navbar"}
       
     >
       <Container>
-        <Navbar.Brand href="#" target="_blank">
+        <Navbar.Brand href="/" target="_blank">
           {/* <MdDeveloperMode style={{ marginBottom: "2px" }} />  */}
-          Dunsinola.com
+          Dunsinola
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

@@ -114,7 +114,7 @@ function NavBar() {
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
           }}
-        >
+        > 
         
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">

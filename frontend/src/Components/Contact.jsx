@@ -13,7 +13,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 
 const Contact = () => {
-    const url='https://dunsinola.herokuapp.com/'
+    const url='https://dunsin.onrender.com/'
     const [data, setData] = useState({
         fullname: "",
         email: "",
